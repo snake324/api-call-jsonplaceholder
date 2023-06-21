@@ -13,12 +13,13 @@ imprimirDatos();
 
 async function crearTabla() {
     const datos = await obtenerDatos();
-    let tabla = '<table><tr><th>ID</th><th>Nombre</th><th>Ciudad</th></tr>';
+    let tabla = document.getElementById('tablaUsuarios');
     datos.forEach(usuario => {
-        tabla += `<tr><td>${usuario.id}</td><td>${usuario.name}</td><td>${usuario.address.city}</td></tr>`;
+        let fila = tabla.insertRow();
+        fila.insertCell().textContent = usuario.id;
+        fila.insertCell().textContent = usuario.name;
+        fila.insertCell().textContent = usuario.address.city;
     });
-    tabla += '</table>';
-    document.body.innerHTML = tabla;
 }
 crearTabla();
 

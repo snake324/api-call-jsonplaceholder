@@ -6,6 +6,15 @@
     <title>api-call-jsonplaceholder</title>
 </head>
 <body>
+    <h1>Usuarios</h1>
+    <table id="tablaUsuarios">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Ciudad</th>
+        </tr>
+    </table>
+    <h2>Buscar usuario por ID</h2>
     <input type="text" id="idUsuario" placeholder="Introduce el ID del usuario">
     <button onclick="obtenerUsuario()">Obtener Usuario</button>
     <div id="resultado"></div>

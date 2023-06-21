@@ -21,3 +21,10 @@ async function crearTabla() {
     document.body.innerHTML = tabla;
 }
 crearTabla();
+
+async function obtenerUsuario() {
+    const id = document.getElementById('idUsuario').value;
+    const respuesta = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+    const usuario = await respuesta.json();
+    document.getElementById('resultado').innerHTML = `Nombre: ${usuario.name}, Teléfono: ${usuario.phone}`;
+}
